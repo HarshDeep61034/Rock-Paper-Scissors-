@@ -1,29 +1,44 @@
-//Array of possible selections for Computer
- const selection = ["rock", "paper", "scissor"];
+// Accesing event listners
+ const rockEl = document.getElementById('rock');
+ const paperEl = document.getElementById('paper');
+ const scissorEl = document.getElementById('scissor');
 
- //User Input for number of rounds
-const n = parseInt(prompt("How many Rounds you wanna Play?"))
+//Array of possible selections for Computer
+const selection = ["rock", "paper", "scissor"];
 
 // declaring selection variables
-var playerSelection = "none";
-var computerSelection = "none";
+var computerSelection = "none"; 
 
- //computer choice function
- function getComputerChoice(){
-    let x = Math.floor(Math.random() * 3);
-    return selection[x];
- }
+ // player selection function
+ rockEl.addEventListener('click', () =>{
+    var playerSelection = 'rock';
+    playRound(playerSelection, computerSelection);
 
- // Storing number of wins in this variable
- let won = 0;
+  })
+  paperEl.addEventListener('click', () =>{
+   var playerSelection = 'paper';
+    playRound(playerSelection, computerSelection);
+  })
+  scissorEl.addEventListener('click', () =>{
+    var playerSelection = 'scissor';
+     playRound(playerSelection, computerSelection);
+  })
+
+ 
+  
+
 
  // Game logic Function
 function playRound(playerSelection, computerSelection){
 
-
+   
+//computer choice function
+function getComputerChoice(){
+    let x = Math.floor(Math.random() * 3);
+    return selection[x];
+ }
+ 
 //player & computer Selection 
-
-playerSelection = prompt("Rock, Paper or Scissor").toLowerCase();
 
 computerSelection = getComputerChoice();
 
@@ -33,7 +48,7 @@ computerSelection = getComputerChoice();
     }
     else if(playerSelection === "paper"){
         console.log("Yow win! paper beats rock")
-        won += 1;
+    
     }
     else if(playerSelection === "scissor"){
         console.log("You Lose! rock beats scissor");
@@ -49,7 +64,7 @@ computerSelection = getComputerChoice();
     }
     else if(playerSelection === "scissor"){
         console.log("You Win! scissor beats paper");
-        won+=1;
+       
     }
   }
 
@@ -62,19 +77,9 @@ computerSelection = getComputerChoice();
     }
     else if(playerSelection === "scissor"){
         console.log("You Win! scissor beats paper");
-        won+=1;
+        
     }
   }
 
 }
 
-//function to fetch number of wins and to play game n number of rounds!!
-
-function game(){
-    for(let i = 0; i<n; i++){
-       playRound(playerSelection, computerSelection);
-    }
-    return console.log(`you won ${won} matches out of ${n}`)
-}
-
-game();
