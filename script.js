@@ -2,6 +2,8 @@
  const rockEl = document.getElementById('rock');
  const paperEl = document.getElementById('paper');
  const scissorEl = document.getElementById('scissor');
+ const resultEl = document.getElementById('result');
+ 
 
 //Array of possible selections for Computer
 const selection = ["rock", "paper", "scissor"];
@@ -44,39 +46,39 @@ computerSelection = getComputerChoice();
 
   if(computerSelection === "rock"){
     if(playerSelection === "rock"){
-        console.log("Match Draw! Identical Selection")
+        resultEl.textContent = "Match Draw! Identical Selection";
     }
     else if(playerSelection === "paper"){
-        console.log("Yow win! paper beats rock")
+        resultEl.textContent = "Yow win! paper beats rock";
     
     }
     else if(playerSelection === "scissor"){
-        console.log("You Lose! rock beats scissor");
+        resultEl.textContent = "You Lose! rock beats scissor";
     }
   }
 
   else if(computerSelection === "paper"){
     if(playerSelection === "rock"){
-        console.log("You Lose! paper beats rock")
+        resultEl.textContent = "You Lose! paper beats rock";
     }
     else if(playerSelection === "paper"){
-        console.log("Match Draw! Identical Selection")
+        resultEl.textContent = "Match Draw! Identical Selection";
     }
     else if(playerSelection === "scissor"){
-        console.log("You Win! scissor beats paper");
+        resultEl.textContent = "You Win! scissor beats paper";
        
     }
   }
 
   else if(computerSelection === "paper"){
     if(playerSelection === "rock"){
-        console.log("You Lose! paper beats rock")
+        resultEl.textContent = "You Lose! paper beats rock";
     }
     else if(playerSelection === "paper"){
-        console.log("Match Draw! Identical Selection")
+        resultEl.textContent = "Match Draw! Identical Selection";
     }
     else if(playerSelection === "scissor"){
-        console.log("You Win! scissor beats paper");
+        resultEl.textContent = "You Win! scissor beats paper";
         
     }
   }
